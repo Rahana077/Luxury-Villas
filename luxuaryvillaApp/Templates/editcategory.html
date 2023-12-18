@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+</head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+  <body>
+    <div class="card-body">
+                    <h4 class="card-title"> Edit Category Page..</h4>
+<!--                    <p class="card-description"> Basic form elements </p>-->
+                    <form method="post" action="{% url 'updatecat_fn' dataid=categorydata.id %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                        <label>Category</label><br><br>
+                      <div class="form-group">
+
+                        <select class="form-control" id="exampleSelectGender" name="cat_name"  >
+                          <option>{{categorydata.cat_name}}</option>
+                        </select>
+                          <label>Category Image</label><br>
+                          <div >
+                              <img src="{{categorydata.categoryImage.url}}" width="80px" height="80px">
+                              <input type="file" name="cimage">
+                          </div><br>
+                          <label>Description</label><br>
+                          <div class="form-floating">
+                              <textarea class="form-control" placeholder="" id="" name="cat_description">{{categorydata.cat_description}}</textarea>
+                          </div><br>
+                          <label>Location</label>
+                          <select class="form-control" id=" " name="Location" value="{{categorydata.Location}}" >
+                              <option>Select</option>
+
+                              <option>Cochin</option>
+                              <option>Kottayam</option>
+                              <option>Kollam</option>
+                              <option>Kannur</option>
+                              <option>Trivandrum</option>
+                          </select>
+
+                          <div class="form-group">
+                          </div>
+                      </div>
+                 <div><br>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button></div>
+                    </form>
+    </div>
+</body>
+</html>
+{% endblock %}

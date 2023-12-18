@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<head>
+  <title>display page</title>
+  <body>
+
+
+<div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Display Category Table</h4>
+<!--                    <p class="card-description"> Add class <code>.table</code>-->
+<!--                    </p>-->
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Category Name</th>
+                            <th>Category Image</th>
+                            <th>Category Description</th>
+                            <th>Location</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in data %}
+                          <tr>
+                            <td>{{i.cat_name}}</td>
+                            <td>
+                                <img src="{{i.categoryImage.url}}" width="80px" height="80px"></td>
+                            <td>{{i.cat_description}}</td>
+                            <td>{{i.Location}}</td>
+
+
+
+                              <td>
+                        <form action="{% url 'editcat_fun' dataid=i.id %}">
+
+                              <button type="submit" class="btn btn-info">Edit</button>
+                        </form>
+
+                          </td>
+                               <td>
+                        <form action="{% url 'deletecat_fn' dataid=i.id %}">
+
+                            <button type="submit" class="btn btn-danger">Delete</button>
+
+                        </form>  </td>
+<!--                            <td>Premium</td>-->
+<!--                            <td><label class="badge badge-warning">In progress</label></td>-->
+                          </tr>
+                          <tr>
+<!--                            <td>John</td>-->
+<!--                            <td>53275533</td>-->
+<!--                            <td>14 May 2017</td>-->
+<!--                            <td><label class="badge badge-info">Fixed</label></td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td>Peter</td>-->
+<!--                            <td>53275534</td>-->
+<!--                            <td>16 May 2017</td>-->
+<!--                            <td><label class="badge badge-success">Completed</label></td>-->
+<!--                          </tr>-->
+<!--                          <tr>-->
+<!--                            <td>Dave</td>-->
+<!--                            <td>53275535</td>-->
+<!--                            <td>20 May 2017</td>-->
+<!--                            <td><label class="badge badge-warning">In progress</label></td>-->
+<!--                          </tr>-->
+<!--                          <td>-->
+<!--                        <form action="{% url 'editcat_fun' dataid=i.id %}">-->
+
+<!--                              <button type="submit" class="btn btn-info">Edit</button>-->
+<!--                        </form>-->
+
+<!--                          </td>-->
+<!--                               <td>-->
+<!--                        <form action="{% url 'deletecat_fn' dataid=i.id %}">-->
+
+<!--                            <button type="submit" class="btn btn-danger">Delete</button>-->
+
+<!--                        </form>  </td>-->
+                          </tr>
+                        {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+{% endblock %}
+</body>
+</head>
+</html>

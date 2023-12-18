@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+  <body>
+    <div class="card-body">
+                    <h4 class="card-title">Add Product</h4>
+                    <p class="card-description"> Luxury Villas </p>
+                    <form method="post" action="{% url 'saveproduct_fn' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <div class="form-group">
+                        <label>Category Name</label>
+                          <select class="form-control" id="exampleSelectGender" name="c_name" >
+                          <option>select</option>
+                          <option>Residential</option>
+                            <option>Commercial Buildings</option>
+                            <option>Individual</option>
+                          </select>
+<!--                        <input type="text" class="form-control" id="exampleInputName1" placeholder="" name="c_name">-->
+                      </div>
+                      <div class="form-group">
+                        <label for=" ">Product Name</label>
+                          <select class="form-control" id=" " name="Pro_name" >
+                          <option>select</option>
+                          <option>Apartment</option>
+                            <option>Town house</option>
+                            <option>Duplex Apartment</option>
+                            <option>Condominium</option>
+                            <option>Office building</option>
+                            <option>Restaurants</option>
+                            <option>Ware house</option>
+                            <option>Retail shops</option>
+                            <option>Flats</option>
+                            <option>Compinative villa</option>
+                          </select>
+<!--                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="" name="Pro_name">-->
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Product Image</label>
+                        <input type="file" class="form-control" id="exampleInputPassword4" placeholder="" name="ProductImage">
+                      </div>
+                       <div class="form-group">
+                        <label for="">Price</label>
+                        <input type="text" class="form-control" id="examp" placeholder="" name="Price">
+                      </div>
+                         <div class="form-group">
+                        <label for="">Product Description</label>
+                        <input type="text" class="form-control" id="" placeholder="" name="ProDescription">
+                      </div>
+<!--                      <div class="form-group">-->
+<!--                        <label for="exampleSelectGender">Gender</label>-->
+<!--                        <select class="form-control" id="exampleSelectGender">-->
+<!--                          <option>Male</option>-->
+<!--                          <option>Female</option>-->
+<!--                        </select>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label>File upload</label>-->
+<!--                        <input type="file" name="img[]" class="file-upload-default">-->
+<!--                        <div class="input-group col-xs-12">-->
+<!--                          <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">-->
+<!--                          <span class="input-group-append">-->
+<!--                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>-->
+<!--                          </span>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="exampleInputCity1">City</label>-->
+<!--                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="exampleTextarea1">Textarea</label>-->
+<!--                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>-->
+<!--                      </div>-->
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+</head>
+</body>
+</html>
+{% endblock %}
